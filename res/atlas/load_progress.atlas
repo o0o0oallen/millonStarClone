@@ -1,0 +1,1 @@
+{"frames":{"img_load_progress_bottom.png":{"frame":{"h":61,"idx":0,"w":104,"x":0,"y":0},"sourceSize":{"h":61,"w":104},"spriteSourceSize":{"x":0,"y":0}},"img_load_progress_top.png":{"frame":{"h":24,"idx":0,"w":22,"x":105,"y":0},"sourceSize":{"h":24,"w":22},"spriteSourceSize":{"x":0,"y":0}}},"meta":{"image":"load_progress.png","prefix":"load_progress/"}}

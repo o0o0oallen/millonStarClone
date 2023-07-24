@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Million Star</title>
+	<meta charset='utf-8' />
+	
+	<meta name='viewport' content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'
+	/>
+	<meta name="renderer" content="webkit" />
+	<meta name='apple-mobile-web-app-capable' content='yes' />
+	<meta name='full-screen' content='true' />
+	<meta name='x5-fullscreen' content='true' />
+	<meta name='360-fullscreen' content='true' />
+	<meta name="laya" screenorientation="portrait" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta http-equiv='expires' content='0' />
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+</head>
+
+<body>
+	<!--
+	<script type="text/javascript" src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
+	<script>
+		// 初始化
+		var vConsole = new VConsole();
+		console.log('Hello worlddddd');
+	</script>
+	-->
+	<!--以下引用了常用类库，如果不使用，可以删除-->
+	<!--<script type="text/javascript" src="http://newidea4-gamecenter-frontend.1sapp.com/sdk/prod/h5.v1.0.0.js?spread=required" crossorigin="anonymous"></script>-->
+
+	<!--核心包，封装了显示对象渲染，事件，时间管理，时间轴动画，缓动，消息交互,socket，本地存储，鼠标触摸，声音，加载，颜色滤镜，位图字体等-->
+	<script type="text/javascript" src="libs/laya.core.js"></script>
+	<!--提供了微信小游戏的适配-->
+	<script type="text/javascript" src="libs/laya.wxmini.js"></script>
+	<!--提供了百度小游戏的适配-->
+	<!--<script type="text/javascript" src="libs/laya.bdmini.js"></script>-->
+	<!--封装了webgl渲染管线，如果使用webgl渲染，可以在初始化时调用Laya.init(1000,800,laya.webgl.WebGL);-->
+	<script type="text/javascript" src="libs/laya.webgl.js"></script>
+	<!--是动画模块，包含了swf动画，骨骼动画等-->
+	<!--<script type="text/javascript" src="libs/laya.ani.js"></script>-->
+	<!--包含更多webgl滤镜，比如外发光，阴影，模糊以及更多-->
+	<script type="text/javascript" src="libs/laya.filter.js"></script>
+	<!--封装了html动态排版功能-->
+	<!--<script type="text/javascript" src="libs/laya.html.js"></script>-->
+	<!--粒子类库-->
+	<!--<script type="text/javascript" src="libs/laya.particle.js"></script>-->
+	<!--提供tileMap解析支持-->
+	<!--<script type="text/javascript" src="libs/laya.tiledmap.js"></script>-->
+	<!--提供了制作UI的各种组件实现-->
+	<script type="text/javascript" src="libs/laya.ui.js"></script>
+	<!-- 物理引擎matter.js -->
+	<!--用户自定义顺序文件添加到这里-->
+	<!--jsfile--Custom-->
+	<!--<script type="text/javascript" src="libs/laya.debugtool.js"></script>-->
+	<!--<script type="text/javascript" src="libs/md5.min.js"></script>-->
+	<script type="text/javascript" src="libs/laya.ani.js"></script>
+	<!--<script type="text/javascript" src="libs/hagoforcewebgl1patch.js"></script>-->
+	<!--微游sdk-->
+	<script type="text/javascript" src="minigame.js"></script>
+	<!--最美广告sdk-->
+	<!--
+	<script type="text/javascript" src="https://hwad.zuimeitianqi.com/web/static/js/game-iframe.min.js"></script>
+	-->
+<!--data-admob-interstitial-slot="ca-app-pub-0987654321/1234567890"
+      data-admob-rewarded-slot="ca-app-pub-0987654321/0987654321"-->
+	<!--<script type="text/javascript" src="libs/thinkingdata.umd.min.js"></script>-->
+
+	<!-- 接adsence广告
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4045414008543216"
+     crossorigin="anonymous"></script>
+
+	<ins class="adsbygoogle"
+		style="display:block"
+		data-ad-client="ca-pub-4045414008543216"
+		data-ad-slot="5563492648"
+		data-ad-format="auto"
+		data-full-width-responsive="true"></ins>
+	<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+
+-->
+	
+	<!--
+			<script async
+	  data-ad-frequency-hint="30s"
+	  data-adbreak-test="on"
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-123456789"
+      crossorigin="anonymous">
+    </script>
+	<script async
+	  data-ad-frequency-hint="30s"
+	  
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8969722984181378"
+      crossorigin="anonymous">
+    </script>
+	-->
+	<script>
+      window.adsbygoogle = window.adsbygoogle || [];
+      window.adBreak = adConfig = function(o) {adsbygoogle.push(o);}
+    </script>
+	<!--jsfile--Custom-->
+	<!--自定义的js(src文件夹下)文件自动添加到下面jsfile模块标签里面里-->
+	<!--删除标签，ide不会自动添加js文件，请谨慎操作-->
+	<!--jsfile--startTag-->
+	<script src="js/view/SubScriptionWnd.js"></script>
+	<script src="js/view/SignInWnd.js"></script>
+	<script src="js/view/ShopUI.js"></script>
+	<script src="js/view/ShopTipWnd.js"></script>
+	<script src="js/view/SettingWnd.js"></script>
+	<script src="js/view/ScoreWnd.js"></script>
+	<script src="js/view/RelifeTryFuWnd.js"></script>
+	<script src="js/view/LoadMask.js"></script>
+	<script src="js/view/ItemTipWnd.js"></script>
+	<script src="js/view/GuideUICon.js"></script>
+	<script src="js/view/GDPRTipWnd.js"></script>
+	<script src="js/view/FirstChargeWnd.js"></script>
+	<script src="js/view/ExchangeWnd.js"></script>
+	<script src="js/view/EndlessWnd.js"></script>
+	<script src="js/view/BoxRewardWnd.js"></script>
+	<script src="js/view/AchievementWnd.js"></script>
+	<script src="js/GameConfig.js"></script>
+	<script src="js/Entitys/Base/Base_User_Entity.js"></script>
+	<script src="js/Entitys/Base/Base_Game_Model.js"></script>
+	<script src="js/Entitys/Base/Base_Audio_Manager.js"></script>
+	<script src="js/Entitys/Accounts.js"></script>
+	<script src="js/Conteroller/Interface_Manager.js"></script>
+	<script src="js/Common/Wechat_Manager.js"></script>
+	<script src="js/Common/Wanyiwan_Manager.js"></script>
+	<script src="js/Common/ThinkingData_H5.js"></script>
+	<script src="js/Common/ThinkingData.js"></script>
+	<script src="js/Common/Stack.js"></script>
+	<script src="js/Common/Share_Manager.js"></script>
+	<script src="js/Common/Qtt_H5_Manager.js"></script>
+	<script src="js/Common/Object_Pool_Manager.js"></script>
+	<script src="js/Common/Network/NetMsgID.js"></script>
+	<script src="js/Common/Network/GameNet.js"></script>
+	<script src="js/Common/MGC_Manager.js"></script>
+	<script src="js/Common/LanguageManager.js"></script>
+	<script src="js/Common/IAPManager.js"></script>
+	<script src="js/Common/HuiBao.js"></script>
+	<script src="js/Common/HaGoManager.js"></script>
+	<script src="js/Common/Game_Interface.js"></script>
+	<script src="js/Common/Dictionary.js"></script>
+	<script src="js/Common/Common_Method.js"></script>
+	<script src="js/Common/CFunc.js"></script>
+	<script src="js/Common/Cache_Data.js"></script>
+	<script src="js/Common/Baidu_Manager.js"></script>
+	<script src="js/Common/AdsManager.js"></script>
+	<script src="js/bingdu/weapon/Weapon.js"></script>
+	<script src="js/bingdu/weapon/Buttle8.js"></script>
+	<script src="js/bingdu/weapon/Buttle5.js"></script>
+	<script src="js/bingdu/weapon/Buttle10.js"></script>
+	<script src="js/bingdu/weapon/Buttle.js"></script>
+	<script src="js/bingdu/util/TimeTool.js"></script>
+	<script src="js/bingdu/util/PosTool.js"></script>
+	<script src="js/bingdu/util/FPool.js"></script>
+	<script src="js/bingdu/util/ColorFilterPool.js"></script>
+	<script src="js/bingdu/util/ArrayTool.js"></script>
+	<script src="js/bingdu/ui/UIHelper.js"></script>
+	<script src="js/bingdu/ui/TipRich.js"></script>
+	<script src="js/bingdu/ui/TextBg.js"></script>
+	<script src="js/bingdu/ui/ScrollContent.js"></script>
+	<script src="js/bingdu/props/Buff.js"></script>
+	<script src="js/bingdu/other/MathTools.js"></script>
+	<script src="js/bingdu/other/FxHit.js"></script>
+	<script src="js/bingdu/other/ColorTool.js"></script>
+	<script src="js/bingdu/math/Rate.js"></script>
+	<script src="js/bingdu/math/BigUInt.js"></script>
+	<script src="js/bingdu/manager/MTwinkle.js"></script>
+	<script src="js/bingdu/manager/MStage.js"></script>
+	<script src="js/bingdu/manager/MSound.js"></script>
+	<script src="js/bingdu/manager/Clock.js"></script>
+	<script src="js/bingdu/http/Request.js"></script>
+	<script src="js/bingdu/http/Http.js"></script>
+	<script src="js/bingdu/game/UIAnim.js"></script>
+	<script src="js/bingdu/game/StateVal.js"></script>
+	<script src="js/bingdu/game/Pgs3.js"></script>
+	<script src="js/bingdu/game/ImgText.js"></script>
+	<script src="js/bingdu/game/ImgPool.js"></script>
+	<script src="js/bingdu/game/ImgPgsCircle.js"></script>
+	<script src="js/bingdu/game/ImgLink.js"></script>
+	<script src="js/bingdu/game/ImgAnim.js"></script>
+	<script src="js/bingdu/game/FxPlus.js"></script>
+	<script src="js/bingdu/game/fxPaiticle.js"></script>
+	<script src="js/bingdu/game/FlyMoneyAnim.js"></script>
+	<script src="js/bingdu/game/AreaCircle.js"></script>
+	<script src="js/bingdu/game/AnimImg.js"></script>
+	<script src="js/bingdu/data/ParamOnline.js"></script>
+	<script src="js/bingdu/data/Lan.js"></script>
+	<script src="js/bingdu/data/DataTable.js"></script>
+	<script src="js/bingdu/Cfg.js"></script>
+	<script src="js/bingdu/bugs/Planet8_Boom_Child.js"></script>
+	<script src="js/bingdu/bugs/Planet12_HD_Child.js"></script>
+	<script src="js/bingdu/bugs/Planet.js"></script>
+	<script src="js/bingdu/bugs/Planet10_ZuiZhong.js"></script>
+	<script src="js/bingdu/bugs/Planet11_Children.js"></script>
+	<script src="js/bingdu/bugs/Planet12_HD.js"></script>
+	<script src="js/bingdu/bugs/Planet1_Default.js"></script>
+	<script src="js/bingdu/bugs/Planet2_FaseMove.js"></script>
+	<script src="js/bingdu/bugs/Planet3_LinkLine.js"></script>
+	<script src="js/bingdu/bugs/Planet4_FanTan.js"></script>
+	<script src="js/bingdu/bugs/Planet5_MakeSlow.js"></script>
+	<script src="js/bingdu/bugs/Planet6_Blood.js"></script>
+	<script src="js/bingdu/bugs/Planet7_TunShi.js"></script>
+	<script src="js/bingdu/bugs/Planet8_Boom.js"></script>
+	<script src="js/bingdu/bugs/Planet9_JieHe.js"></script>
+	<script src="js/bingdu/evt/Evt.js"></script>
+	<script src="js/bingdu/data/MD5.js"></script>
+	<script src="js/bingdu/data/Save.js"></script>
+	<script src="js/bingdu/evt/IFS.js"></script>
+	<script src="js/bingdu/game/ImgBtn.js"></script>
+	<script src="js/bingdu/other/IconFu.js"></script>
+	<script src="js/bingdu/other/Server.js"></script>
+	<script src="js/bingdu/Plane.js"></script>
+	<script src="js/bingdu/props/Buff1_HuoLi.js"></script>
+	<script src="js/bingdu/props/Buff2_FanWei.js"></script>
+	<script src="js/bingdu/props/Buff3_JianSu.js"></script>
+	<script src="js/bingdu/props/Buff4_ZhaoHuan.js"></script>
+	<script src="js/bingdu/props/Buff5_JinBi.js"></script>
+	<script src="js/bingdu/props/DeBuff1_JianSu.js"></script>
+	<script src="js/bingdu/props/DeBuff2_JiaSu.js"></script>
+	<script src="js/bingdu/props/DeBuff3_HuoYue.js"></script>
+	<script src="js/bingdu/props/Item1_Jinbi.js"></script>
+	<script src="js/bingdu/SV.js"></script>
+	<script src="js/bingdu/ui/BtnImg.js"></script>
+	<script src="js/bingdu/ui/RadioImg.js"></script>
+	<script src="js/bingdu/weapon/Buttle0.js"></script>
+	<script src="js/bingdu/weapon/Buttle1.js"></script>
+	<script src="js/bingdu/weapon/Buttle11.js"></script>
+	<script src="js/bingdu/weapon/Buttle2.js"></script>
+	<script src="js/bingdu/weapon/Buttle4.js"></script>
+	<script src="js/bingdu/weapon/Buttle6.js"></script>
+	<script src="js/bingdu/weapon/Buttle7.js"></script>
+	<script src="js/bingdu/weapon/Buttle9.js"></script>
+	<script src="js/bingdu/weapon/Weapon0.js"></script>
+	<script src="js/bingdu/weapon/Weapon1.js"></script>
+	<script src="js/bingdu/weapon/Weapon10.js"></script>
+	<script src="js/bingdu/weapon/Weapon11.js"></script>
+	<script src="js/bingdu/weapon/Weapon2.js"></script>
+	<script src="js/bingdu/weapon/Weapon3.js"></script>
+	<script src="js/bingdu/weapon/Weapon4.js"></script>
+	<script src="js/bingdu/weapon/Weapon5.js"></script>
+	<script src="js/bingdu/weapon/Weapon6.js"></script>
+	<script src="js/bingdu/weapon/Weapon7.js"></script>
+	<script src="js/bingdu/weapon/Weapon8.js"></script>
+	<script src="js/bingdu/weapon/Weapon9.js"></script>
+	<script src="js/Conteroller/UI_Manager.js"></script>
+	<script src="js/Entitys/User_Entity.js"></script>
+	<script src="js/ui/layaUI.max.all.js"></script>
+	<script src="js/view/AchievementRDWnd.js"></script>
+	<script src="js/view/GameUI.js"></script>
+	<script src="js/view/Load_Progress_View.js"></script>
+	<!--jsfile--endTag-->
+
+	<!--启动类添加到这里-->
+	<!--jsfile--Main-->
+	<script src="js/Main.js"></script>
+	<!--jsfile--Main-->
+    
+      
+    <script>
+
+
+	
+
+</script>
+</body>
+
+</html>
