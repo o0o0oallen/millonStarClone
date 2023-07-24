@@ -1171,14 +1171,21 @@ var AdsManager = /** @class */ (function () {
         return Laya.Browser.window.MiniGameAds.isRewardvideoReady();
     };
     AdsManager.showRewardedVideo_wy = function (call, sucFun, errFun) {
+        console.log("播放激励广告 成功===");
+        if (call && sucFun) {
+            sucFun.call(call);
+            sucFun = null;
+        }
+        AchievementWnd.ME.addAch(3, 1, 1);
         //console.log("开发播放激励广告====="+AdsManager.isRewardedVideoReady_wy());
-        if (!AdsManager.isRewardedVideoReady_wy()) {
+        /*if (!AdsManager.isRewardedVideoReady_wy()) {
             if (call && errFun) {
                 errFun.call(call);
                 errFun = null;
             }
             return;
         }
+
         Laya.Browser.window.MiniGameAds.showRewardedVideo().then(function () {
             console.log("播放激励广告 成功===");
             if (call && sucFun) {
@@ -1192,7 +1199,7 @@ var AdsManager = /** @class */ (function () {
                 errFun.call(call);
                 errFun = null;
             }
-        });
+        });*/
     };
     AdsManager.isInterstitialReady_wy = function () {
         return Laya.Browser.window.MiniGameAds.isInterstitialReady();
